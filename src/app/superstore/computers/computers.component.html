@@ -1,0 +1,21 @@
+<table class="table">
+    <tr>
+        <td><button class="button" (click)="getProducts()">Get Products</button></td>
+        <td><button class="button" (click)="clearState()">Clear State</button></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <br />
+            <label class="status" htmlFor="title">
+                Query Status:
+                <textarea class="area" id="txtArea" readonly></textarea>
+            </label>
+        </td>
+    </tr>
+</table>
+<br />
+<div id="dataSource"></div>
+<div id="comptab">
+    <table id="tbl" style="border:2px; border-color:aqua "></table>
+</div>

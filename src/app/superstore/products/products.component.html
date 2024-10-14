@@ -1,0 +1,61 @@
+<main>
+        <br />
+        <table class="table">
+            <tr>
+                <td><button class="button" (click)="getProducts()">Get Products</button></td>
+                <td><button class="button" (click)="clearState()">Clear State</button></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="3" class="title">Products</td>
+            </tr>
+            <tr>
+                <td class="label">Product Id:</td>
+                <td><input type="text" [(ngModel)]="product.id" name="ID" value=""></td>
+                <td><button class="button" (click)="getProduct()">Get Product</button></td>
+            </tr>
+            <tr>
+                <td class="label">Name:</td>
+                <td><input type="text" [(ngModel)]="product.name" name="Name"></td>
+                <td><button class="button" (click)="addProduct()">Add Product</button></td>
+            </tr>
+            <tr>
+                <td class="label">Price:</td>
+                <td><input type="text" [(ngModel)]="product.price" Name="Price" value=""></td>
+                <td><button class="button" (click)="deleteProduct()">Delete Product</button></td>
+
+            </tr>
+            <tr>
+                <td class="label">Product Type:</td>
+                <td>
+                    <select style="width: 95%" id="Type" #productType (change)="onProductTypeSelected(productType.value)">
+                        <option default>Pick Product Type</option>
+                        <option *ngFor="let productType of productTypes">{{productType}}</option>
+                    </select>
+                </td>
+                <td><button class="button" (click)="cleanup()">Empty form</button></td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <br />
+                    <label class="status" htmlFor="title">
+                        Query Status:
+                        <textarea class="area" id="txtArea" readonly></textarea>
+                    </label>
+                </td>
+            </tr>
+        </table>
+
+    <div *ngIf="isLoading$ | async">Loading...</div>
+    <br/>
+    <div id="dataSource"></div>
+    <div id="ptab">
+        <table id="tbl" style="border:2px; border-color:aqua "></table>
+    </div>
+</main>
