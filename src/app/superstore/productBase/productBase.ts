@@ -15,7 +15,7 @@ export class ProductBase {
   public isLoading$: Observable<boolean>;
   public error$: Observable<string | null>;
   public products$: Observable<ProductInterface[]>;
-  public baseUrl = 'https://localhost:7114/api/Products';
+  public baseUrl = 'https://localhost:7009/api/Products';
   public dataSource = '';
   private tabs: string[] = ['ptab', 'comptab', 'cartab', 'cafetab'];
   protected dataSourceChange = false;
